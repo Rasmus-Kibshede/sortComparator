@@ -11,6 +11,8 @@ public class Main {
 
         players.add(new Player("Anna", 30));
         players.add(new Player("Anna", 29));
+        players.add(new Player("Anna", 28));
+        players.add(new Player("Anna", 27));
 
         Scanner scanner = new Scanner(System.in);
 
@@ -23,7 +25,7 @@ public class Main {
                     2. sort by age
                     3. print""");
 
-            String type = "";
+            String type = null;
 
             switch (scanner.nextInt()) {
                 case 1:
@@ -40,7 +42,7 @@ public class Main {
                     }
             }
 
-            if (comparator != null) {
+            if (type != null) {
                 System.out.println("""
                         S
                         1. name
@@ -55,11 +57,6 @@ public class Main {
                 }
             }
 
-
-            if (comparator != null && comparatorS != null)
-                Collections.sort(players, comparator.thenComparing(comparatorS));
-            if (comparator != null)
-                Collections.sort(players, comparator);
         }
 
 
